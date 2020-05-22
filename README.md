@@ -8,7 +8,7 @@ I got the idea for doing this script from Bryan Jenks video in YouTube https://w
 # Installation
 No special installation stuff. Just copy the script and give it execution rights.
 
-# Using
+# Usage
 Download the opml file from YouTube. Follow the link: https://www.youtube.com/subscription_manager and scroll down to see the download button. Default filename is set to subscription_manager.
 
 Run the script and give the opml file as a argument.
