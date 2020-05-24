@@ -17,5 +17,8 @@ yt-subs-list.sh subscription_manager
 ```
 And then the script spits out a file called _list_ in the folder where you are working.
 
-# Issues
-There is one known issue that I posted. Can anyone help me for solving that.
+# Modify
+
+You can point the output directly to _urls_ -file by chansing the name of the output file to **~/.newsboat/urls**.
+
+If you have so many subscriptions that reading Newsboat is difficult you can hide the individual links by adding `"!"` into the tag section as a first tag. But then you need to add query into the _urls_ file like so `"query:YouTube:tags # \"youtube\""`
