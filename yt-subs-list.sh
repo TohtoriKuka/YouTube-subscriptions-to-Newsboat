@@ -1,17 +1,12 @@
 #!/bin/sh
 # title: YouTube subscriptions to Newsboat
-# author: Taro Turtiainen - TorhtoriKuka
+# author: Taro Turtiainen - TohtoriKuka
 # date: 2020.05.22
 # Description: Makes opml file downloaded from YouTube to Newsboat rss-reader format.
 
 opmlFile=$1
 
-cat $opmlFile |\
-       	sed 's/<outline/\n<outline/g;s/<\/outline/\n<\/outline/g;s/ \/>//g' |\
-       	grep 'https' |\
-       	sed 's/<outline text=/|/g;s/ title=/|/g;s/ type="rss"/|/g;s/ xmlUrl=/|/g' |\
-	awk '{FS="\""} {print $2"|"$6}' |\
-       	awk '{FS="|"} {title=$1;url=$2} {print url" ~"title" (YouTube)"}' |\
-	sed 's/~/"~/g;s/)/)"/g' |\
-	grep 'https' \
-	>./list
+sed 's/<outline text=/\n/g;s/<\/outline/\n/g;s/ \/>//g;s/ title=/|/g;s/ type="rss"//g;s/ xmlUrl=/|/g' $opmlFile|\
+	cut -d\| -f2-3|\
+	awk '{FS="\""} {print $4" \"~"$2" (YouTube)\" " "\"YouTube\""}'|\
+       	grep 'https' > ./list
