@@ -21,6 +21,6 @@ And then the script spits out a file called _list_ in the folder where you are w
 
 You can point the output directly to _urls_ -file by chansing the name of the output file to **~/.newsboat/urls**.
 
-If you have so many subscriptions that reading Newsboat is difficult you can hide the individual links by adding `"!"` into the tag section as a first tag. But then you need to add query into the _urls_ file next line of code.
+If you have so many subscriptions that reading Newsboat is difficult you can hide the individual links by adding `"!"` into the tag section as a first tag. But then you need to add query into the _urls_ file next line.
 
 `"query:YouTube:tags # \"youtube\""`
